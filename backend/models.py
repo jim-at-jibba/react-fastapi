@@ -1,5 +1,6 @@
+import datetime as dt
+
 import database as database
-import datatime as dt
 import passlib.hash as hash
 import sqlalchemy as sql
 import sqlalchemy.orm as orm
@@ -20,7 +21,7 @@ class User(database.Base):
 class Lead(database.Base):
     __tablename__ = "leads"
     id = sql.Column(sql.Integer, primary_key=True, index=True)
-    owner_id = sql.Column(sql.Integer, sql.ForeignKey("user.id"))
+    owner_id = sql.Column(sql.Integer, sql.ForeignKey("users.id"))
     first_name = sql.Column(sql.String, index=True)
     last_name = sql.Column(sql.String, index=True)
     email = sql.Column(sql.String, index=True)

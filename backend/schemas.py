@@ -1,4 +1,5 @@
-import datatime as dt
+import datetime as dt
+
 import pydantic
 
 
@@ -35,8 +36,8 @@ class LeadCreate(LeadBase):
 class Lead(LeadBase):
     id: int
     owner_id: int
-    date_created: dt.datatime
-    date_last_updated: dt.datatime
+    date_created: dt.datetime
+    date_last_updated: dt.datetime
 
     class Config:
         orm_mode = True
