@@ -26,7 +26,7 @@ class Lead(database.Base):
     last_name = sql.Column(sql.String, index=True)
     email = sql.Column(sql.String, index=True)
     company = sql.Column(sql.String, index=True, default="")
-    note = sql.Column(sql.String, default="")
+    notes = sql.Column(sql.String, default="")
     date_created = sql.Column(sql.DateTime, default=dt.datetime.utcnow)
     date_last_updated = sql.Column(sql.DateTime, default=dt.datetime.utcnow)
 
